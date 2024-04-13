@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "29tD9iAcTMjSeMmSW6JpKiPxZYYRIuw6zRQypNw4W2H0CpafFOAAw4A9Zx2t+/Ta6Jl7nJNuFWMbIF91dELP4Q==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Boldi\\Documents\\Projects\\easyvlans\\btoolbox-xmldeserializer\\btoolbox-xmldeserializer.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Boldi\\.nuget\\packages\\system.runtime.experimental\\6.0.0-preview.7.21377.19\\system.runtime.experimental.6.0.0-preview.7.21377.19.nupkg.sha512"
+  ],
+  "logs": []
+}

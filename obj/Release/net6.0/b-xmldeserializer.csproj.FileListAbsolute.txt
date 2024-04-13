@@ -1,0 +1,12 @@
+C:\Users\Boldi\Documents\Projects\easyvlans\b-xmldeserializer\bin\Release\net6.0\b-xmldeserializer.deps.json
+C:\Users\Boldi\Documents\Projects\easyvlans\b-xmldeserializer\bin\Release\net6.0\b-xmldeserializer.dll
+C:\Users\Boldi\Documents\Projects\easyvlans\b-xmldeserializer\bin\Release\net6.0\b-xmldeserializer.pdb
+C:\Users\Boldi\Documents\Projects\easyvlans\b-xmldeserializer\obj\Release\net6.0\b-xmldeserializer.csproj.AssemblyReference.cache
+C:\Users\Boldi\Documents\Projects\easyvlans\b-xmldeserializer\obj\Release\net6.0\b-xmldeserializer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Boldi\Documents\Projects\easyvlans\b-xmldeserializer\obj\Release\net6.0\b-xmldeserializer.AssemblyInfoInputs.cache
+C:\Users\Boldi\Documents\Projects\easyvlans\b-xmldeserializer\obj\Release\net6.0\b-xmldeserializer.AssemblyInfo.cs
+C:\Users\Boldi\Documents\Projects\easyvlans\b-xmldeserializer\obj\Release\net6.0\b-xmldeserializer.csproj.CoreCompileInputs.cache
+C:\Users\Boldi\Documents\Projects\easyvlans\b-xmldeserializer\obj\Release\net6.0\b-xmldeserializer.dll
+C:\Users\Boldi\Documents\Projects\easyvlans\b-xmldeserializer\obj\Release\net6.0\refint\b-xmldeserializer.dll
+C:\Users\Boldi\Documents\Projects\easyvlans\b-xmldeserializer\obj\Release\net6.0\b-xmldeserializer.pdb
+C:\Users\Boldi\Documents\Projects\easyvlans\b-xmldeserializer\obj\Release\net6.0\ref\b-xmldeserializer.dll

@@ -1,0 +1,12 @@
+C:\Users\Boldi\Documents\Projects\easyvlans\btoolbox-xmldeserializer\bin\Debug\net6.0\btoolbox-xmldeserializer.deps.json
+C:\Users\Boldi\Documents\Projects\easyvlans\btoolbox-xmldeserializer\bin\Debug\net6.0\btoolbox-xmldeserializer.dll
+C:\Users\Boldi\Documents\Projects\easyvlans\btoolbox-xmldeserializer\bin\Debug\net6.0\btoolbox-xmldeserializer.pdb
+C:\Users\Boldi\Documents\Projects\easyvlans\btoolbox-xmldeserializer\obj\Debug\net6.0\btoolbox-xmldeserializer.csproj.AssemblyReference.cache
+C:\Users\Boldi\Documents\Projects\easyvlans\btoolbox-xmldeserializer\obj\Debug\net6.0\btoolbox-xmldeserializer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Boldi\Documents\Projects\easyvlans\btoolbox-xmldeserializer\obj\Debug\net6.0\btoolbox-xmldeserializer.AssemblyInfoInputs.cache
+C:\Users\Boldi\Documents\Projects\easyvlans\btoolbox-xmldeserializer\obj\Debug\net6.0\btoolbox-xmldeserializer.AssemblyInfo.cs
+C:\Users\Boldi\Documents\Projects\easyvlans\btoolbox-xmldeserializer\obj\Debug\net6.0\btoolbox-xmldeserializer.csproj.CoreCompileInputs.cache
+C:\Users\Boldi\Documents\Projects\easyvlans\btoolbox-xmldeserializer\obj\Debug\net6.0\btoolbox-xmldeserializer.dll
+C:\Users\Boldi\Documents\Projects\easyvlans\btoolbox-xmldeserializer\obj\Debug\net6.0\refint\btoolbox-xmldeserializer.dll
+C:\Users\Boldi\Documents\Projects\easyvlans\btoolbox-xmldeserializer\obj\Debug\net6.0\btoolbox-xmldeserializer.pdb
+C:\Users\Boldi\Documents\Projects\easyvlans\btoolbox-xmldeserializer\obj\Debug\net6.0\ref\btoolbox-xmldeserializer.dll
