@@ -19,7 +19,7 @@ public class RelatedObjectNotFoundException : DeserializationException
     private static string formatMessage(string relatedObjectId, Type relatedObjectType)
         => $"Related element [TYPE:{relatedObjectType}] with ID [{relatedObjectId}] not found.";
 
-    public static RelatedObjectNotFoundException Throw<TAttributeValue>(XmlAttributeData<TAttributeValue> attributeData, Type relatedObjectType)
+    public static RelatedObjectNotFoundException Throw<TAttributeValue>(XmlAttributeOrInnerData<TAttributeValue> attributeData, Type relatedObjectType)
         => throw new RelatedObjectNotFoundException(attributeData.Attribute, attributeData.Value?.ToString(), relatedObjectType);
 
 }

@@ -1,6 +1,6 @@
 ﻿namespace BToolbox.XmlDeserializer.Attributes;
 
-public class XmlAttributeParserData<TValue>
+public class XmlAttributeOrInnerParserData<TValue>
 {
     public bool mandatory;
     public TValue defaultValue;

@@ -3,10 +3,10 @@ using System.Xml;
 
 namespace BToolbox.XmlDeserializer.Attributes;
 
-public sealed class XmlAttributeIntParser : XmlAttributeParser<int?, XmlAttributeIntParser.Data>
+public sealed class XmlAttributeOrInnerIntParser : XmlAttributeOrInnerParser<int?, XmlAttributeOrInnerIntParser.Data>
 {
 
-    public XmlAttributeIntParser(XmlNode node, string attributeName, Data data, DeserializationContext context)
+    public XmlAttributeOrInnerIntParser(XmlNode node, string attributeName, Data data, DeserializationContext context)
         : base(node, attributeName, data, context) { }
 
     protected override int? getFromString(string stringValue)
@@ -18,13 +18,13 @@ public sealed class XmlAttributeIntParser : XmlAttributeParser<int?, XmlAttribut
         return intValue;
     }
 
-    public class Builder : XmlAttributeParserBuilder<Builder, int?, Data>
+    public class Builder : XmlAttributeOrInnerParserBuilder<Builder, int?, Data>
     {
 
         public Builder(XmlNode node, string attributeName, DeserializationContext context)
             : base(node, attributeName, context) { }
 
-        public override XmlAttributeIntParser Build()
+        public override XmlAttributeOrInnerIntParser Build()
             => new(node, attributeName, data, context);
 
         public Builder Min(int boundary, bool inclusive = true)
@@ -41,7 +41,7 @@ public sealed class XmlAttributeIntParser : XmlAttributeParser<int?, XmlAttribut
 
     }
 
-    public class Data : XmlAttributeParserData<int?>
+    public class Data : XmlAttributeOrInnerParserData<int?>
     {
         public MinBoundary min;
         public MaxBoundary max;
@@ -62,7 +62,7 @@ public sealed class XmlAttributeIntParser : XmlAttributeParser<int?, XmlAttribut
         public abstract void Check(int value, XmlAttribute attribute);
         protected abstract string ErrorMessage { get; }
         protected void throwErrorMessage(XmlAttribute attribute)
-            => throw new AttributeValueInvalidException(ErrorMessage, attribute);
+            => throw new AttributeOrInnerValueInvalidException(ErrorMessage, attribute);
 
     }
 
@@ -106,7 +106,12 @@ public sealed class XmlAttributeIntParser : XmlAttributeParser<int?, XmlAttribut
 
 public static class XmlAttributeIntParserHelpers
 {
-    public static XmlAttributeIntParser.Builder AttributeAsInt(this XmlNode node, string attributeName, DeserializationContext context)
+
+    public static XmlAttributeOrInnerIntParser.Builder AttributeAsInt(this XmlNode node, string attributeName, DeserializationContext context)
        => new(node, attributeName, context);
+
+    public static XmlAttributeOrInnerIntParser.Builder InnerAsInt(this XmlNode node, DeserializationContext context)
+       => new(node, null, context);
+
 }
 

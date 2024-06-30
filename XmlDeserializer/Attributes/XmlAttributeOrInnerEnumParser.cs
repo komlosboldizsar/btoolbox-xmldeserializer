@@ -3,11 +3,11 @@ using System.Xml;
 
 namespace BToolbox.XmlDeserializer.Attributes;
 
-public sealed class XmlAttributeEnumParser<TEnum> : XmlAttributeParser<TEnum, XmlAttributeEnumParser<TEnum>.Data>
+public sealed class XmlAttributeOrInnerEnumParser<TEnum> : XmlAttributeOrInnerParser<TEnum, XmlAttributeOrInnerEnumParser<TEnum>.Data>
     where TEnum : Enum
 {
 
-    public XmlAttributeEnumParser(XmlNode node, string attributeName, Data data, DeserializationContext context)
+    public XmlAttributeOrInnerEnumParser(XmlNode node, string attributeName, Data data, DeserializationContext context)
         : base(node, attributeName, data, context) { }
 
     protected override TEnum getFromString(string stringValue)
@@ -21,13 +21,13 @@ public sealed class XmlAttributeEnumParser<TEnum> : XmlAttributeParser<TEnum, Xm
         return enumValue;
     }
 
-    public class Builder : XmlAttributeParserBuilder<Builder, TEnum, Data>
+    public class Builder : XmlAttributeOrInnerParserBuilder<Builder, TEnum, Data>
     {
 
         public Builder(XmlNode node, string attributeName, DeserializationContext context)
             : base(node, attributeName, context) { }
 
-        public override XmlAttributeEnumParser<TEnum> Build()
+        public override XmlAttributeOrInnerEnumParser<TEnum> Build()
             => new(node, attributeName, data, context);
 
         public Builder Translation(string stringValue, TEnum enumValue)
@@ -44,7 +44,7 @@ public sealed class XmlAttributeEnumParser<TEnum> : XmlAttributeParser<TEnum, Xm
 
     }
 
-    public class Data : XmlAttributeParserData<TEnum>
+    public class Data : XmlAttributeOrInnerParserData<TEnum>
     {
         public Dictionary<string, TEnum> enumValues = new();
         public bool defaultOnUnknown = false;
@@ -54,8 +54,14 @@ public sealed class XmlAttributeEnumParser<TEnum> : XmlAttributeParser<TEnum, Xm
 
 public static class XmlAttributeEnumParserHelpers
 {
-    public static XmlAttributeEnumParser<TEnum>.Builder AttributeAsEnum<TEnum>(this XmlNode node, string attributeName, DeserializationContext context)
+
+    public static XmlAttributeOrInnerEnumParser<TEnum>.Builder AttributeAsEnum<TEnum>(this XmlNode node, string attributeName, DeserializationContext context)
         where TEnum : Enum
        => new(node, attributeName, context);
+
+    public static XmlAttributeOrInnerEnumParser<TEnum>.Builder InnerAsEnum<TEnum>(this XmlNode node, DeserializationContext context)
+        where TEnum : Enum
+       => new(node, null, context);
+
 }
 
