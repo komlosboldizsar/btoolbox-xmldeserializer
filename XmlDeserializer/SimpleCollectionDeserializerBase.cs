@@ -18,7 +18,10 @@ public abstract class SimpleCollectionDeserializerBase<TCollection, TElement, TE
         this.elementDeserializer = elementDeserializer;
     }
 
-    protected override TElement parseChildNode(XmlNode xmlNode, DeserializationContext context, out IRelationBuilder<TEnvironment> relationBuilder, object parent)
-        => elementDeserializer.Parse(xmlNode, context, out relationBuilder, parent);
+    protected override bool parseChildNode(XmlNode xmlNode, DeserializationContext context, out TElement element, out IRelationBuilder<TEnvironment> relationBuilder, object parent)
+    {
+        element = elementDeserializer.Parse(xmlNode, context, out relationBuilder, parent);
+        return true;
+    }
 
 }

@@ -21,10 +21,13 @@ public abstract class CollectionDeserializerBase<TCollection, TElement, TEnviron
         {
             try
             {
-                TElement element = parseChildNode(elementNode, context, out IRelationBuilder<TEnvironment> elementRelationBuilder, parentOfElements);
-                addElementToCollection(collection, element);
-                if (elementRelationBuilder != null)
-                    compositeRelationBuilder.Add(elementRelationBuilder);
+                bool success = parseChildNode(elementNode, context, out TElement element, out IRelationBuilder <TEnvironment> elementRelationBuilder, parentOfElements);
+                if (success)
+                {
+                    addElementToCollection(collection, element);
+                    if (elementRelationBuilder != null)
+                        compositeRelationBuilder.Add(elementRelationBuilder);
+                }
             }
             catch (DeserializationException ex)
             {
@@ -49,7 +52,7 @@ public abstract class CollectionDeserializerBase<TCollection, TElement, TEnviron
     protected virtual ISlaveRelationBuilder<TCollection, TEnvironment> createSlaveRelationBuilder()
         => null;
 
-    protected abstract TElement parseChildNode(XmlNode xmlNode, DeserializationContext context, out IRelationBuilder<TEnvironment> relationBuilder, object parent);
+    protected abstract bool parseChildNode(XmlNode xmlNode, DeserializationContext context, out TElement element, out IRelationBuilder<TEnvironment> relationBuilder, object parent);
 
     protected abstract void addElementToCollection(TCollection collection, TElement element);
 
