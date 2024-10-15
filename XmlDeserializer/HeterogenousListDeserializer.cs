@@ -13,7 +13,7 @@ public class HeterogenousListDeserializer<TElementBase, TEnvironment> :
     protected override List<TElementBase> createCollection(XmlNode xmlNode, DeserializationContext context, object parent)
         => new();
 
-    protected override void addElementToCollection(List<TElementBase> collection, TElementBase element)
+    protected override void addElementToCollection(List<TElementBase> collection, TElementBase element, XmlNode elementNode, DeserializationContext context)
         => collection.Add(element);
 
 }

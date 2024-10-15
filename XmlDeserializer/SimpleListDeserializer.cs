@@ -13,7 +13,7 @@ public class SimpleListDeserializer<TElement, TEnvironment> :
     protected override List<TElement> createCollection(XmlNode xmlNode, DeserializationContext context, object parent)
         => new();
 
-    protected override void addElementToCollection(List<TElement> collection, TElement element)
+    protected override void addElementToCollection(List<TElement> collection, TElement element, XmlNode elementNode, DeserializationContext context)
         => collection.Add(element);
 
 }

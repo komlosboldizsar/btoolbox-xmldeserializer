@@ -24,7 +24,7 @@ public abstract class CollectionDeserializerBase<TCollection, TElement, TEnviron
                 bool success = parseChildNode(elementNode, context, out TElement element, out IRelationBuilder <TEnvironment> elementRelationBuilder, parentOfElements);
                 if (success)
                 {
-                    addElementToCollection(collection, element);
+                    addElementToCollection(collection, element, elementNode, context);
                     if (elementRelationBuilder != null)
                         compositeRelationBuilder.Add(elementRelationBuilder);
                 }
@@ -54,6 +54,6 @@ public abstract class CollectionDeserializerBase<TCollection, TElement, TEnviron
 
     protected abstract bool parseChildNode(XmlNode xmlNode, DeserializationContext context, out TElement element, out IRelationBuilder<TEnvironment> relationBuilder, object parent);
 
-    protected abstract void addElementToCollection(TCollection collection, TElement element);
+    protected abstract void addElementToCollection(TCollection collection, TElement element, XmlNode elementNode, DeserializationContext context);
 
 }
