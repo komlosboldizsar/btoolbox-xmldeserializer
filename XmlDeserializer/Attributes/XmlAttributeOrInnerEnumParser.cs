@@ -16,7 +16,7 @@ public sealed class XmlAttributeOrInnerEnumParser<TEnum> : XmlAttributeOrInnerPa
         {
             if (data.defaultOnUnknown)
                 return data.defaultValue;
-            throw new AttributeOrInnerValueInvalidException("Enum value unknown.");
+            throwValueInvalidException("Enum value unknown.");
         }
         return enumValue;
     }

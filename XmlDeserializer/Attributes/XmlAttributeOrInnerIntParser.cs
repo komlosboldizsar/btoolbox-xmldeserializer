@@ -12,7 +12,7 @@ public sealed class XmlAttributeOrInnerIntParser : XmlAttributeOrInnerParser<int
     protected override int? getFromString(string stringValue)
     {
         if (!int.TryParse(stringValue, out int intValue))
-            throw new Exception();
+            throwValueInvalidException("Not an integer.");
         data.min?.Check(intValue, attribute);
         data.max?.Check(intValue, attribute);
         return intValue;

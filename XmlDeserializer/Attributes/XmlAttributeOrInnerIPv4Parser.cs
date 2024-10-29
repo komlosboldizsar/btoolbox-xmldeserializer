@@ -13,7 +13,7 @@ public sealed class XmlAttributeOrInnerIPv4Parser : XmlAttributeOrInnerParser<st
     protected override string getFromString(string stringValue)
     {
         if (!REGEXP_IP_ADDRESS.IsMatch(stringValue))
-            throw new AttributeOrInnerValueInvalidException("Invalid IPv4 address");
+            throwValueInvalidException("Invalid IPv4 address.");
         return stringValue;
     }
 
