@@ -1,4 +1,7 @@
-﻿namespace BToolbox.XmlDeserializer;
+﻿using BToolbox.XmlDeserializer.Context;
+using System.Xml;
+
+namespace BToolbox.XmlDeserializer;
 
 public class CollectingCompositeDeserializer<TEnvironment> : CompositeDeserializer<ResultCollection, TEnvironment>
 {
@@ -6,7 +9,7 @@ public class CollectingCompositeDeserializer<TEnvironment> : CompositeDeserializ
     public CollectingCompositeDeserializer(string elementName)
         : base(elementName) { }
 
-    protected override ResultCollection createResult()
+    protected override ResultCollection createResult(XmlNode xmlNode, DeserializationContext context, object parent)
         => new();
 
     public class Registration<TElement> : DeserializerRegistrationBase<ResultCollection, TElement, TEnvironment>
