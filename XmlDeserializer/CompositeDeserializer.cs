@@ -22,7 +22,7 @@ public abstract class CompositeDeserializer<TResult, TEnvironment> : IDeserializ
     {
         if (parentNode.LocalName != ElementName)
             throw new UnexpectedElementNameException(parentNode, ElementName);
-        TResult result = createResult();
+        TResult result = createResult(parentNode, context, parent);
         CompositeRelationBuilder<TResult, TEnvironment> compositeRelationBuilder = new(parentNode, result);
         foreach (XmlNode childNode in parentNode.ChildNodes)
         {
@@ -42,7 +42,7 @@ public abstract class CompositeDeserializer<TResult, TEnvironment> : IDeserializ
         return result;
     }
 
-    protected abstract TResult createResult();
+    protected abstract TResult createResult(XmlNode xmlNode, DeserializationContext context, object parent);
 
     private string[] getExpectedElementNames() => registrations.Select(r => r.Value.ElementName).ToArray();
 
